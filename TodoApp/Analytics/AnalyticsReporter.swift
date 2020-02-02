@@ -1,11 +1,15 @@
 import Foundation
 
 class AnalyticsReporter {
-    var providers: [AnalyticsProvider]
-
-    init(providers: [AnalyticsProvider]) {
-        self.providers = providers
-    }
+    private var providers: [AnalyticsProvider] = []
+    
+    private init() {}
+    
+    static let shared : AnalyticsReporter = {
+        var reporter = AnalyticsReporter()
+        reporter.providers.append(FirebaseAnalyticsProvider())
+        return reporter
+    }()
 
     func report(event: AnalyticsEvent, params: AnalyticsParameters) {
         providers.forEach {

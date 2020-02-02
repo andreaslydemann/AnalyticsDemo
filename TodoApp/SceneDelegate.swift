@@ -12,9 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window.windowScene = windowScene
 
-        FirebaseApp.configure()
-        let analyticsReporter = AnalyticsReporter(providers: [FirebaseAnalyticsProvider()])
-        let categoryVC = CategoryViewController(analyticsReporter: analyticsReporter)
+        let categoryVC = CategoryViewController(analyticsReporter: .shared)
         
         window.rootViewController = UINavigationController(rootViewController: categoryVC)
         window.makeKeyAndVisible()

@@ -1,11 +1,16 @@
 import Foundation
-import FirebaseAnalytics
+import Firebase
 
 struct FirebaseAnalyticsProvider: AnalyticsProvider {
     private let eventMapper: AnalyticsEventMapper
-    
+
     init(eventMapper: AnalyticsEventMapper = SnakeCaseAnalyticsEventMapper()) {
         self.eventMapper = eventMapper
+        setup()
+    }
+    
+    func setup() {
+        FirebaseApp.configure()
     }
 
     func report(event: AnalyticsEvent, parameters: AnalyticsParameters) {
