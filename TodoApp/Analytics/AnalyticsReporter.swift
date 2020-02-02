@@ -13,9 +13,9 @@ class AnalyticsReporter {
         providers.append(provider)
     }
 
-    func report(event: AnalyticsEvent, params: AnalyticsParameters) {
+    func report(event: AnalyticsEvent) {
         AnalyticsReporter.providers.forEach {
-            $0.report(event: event, parameters: params)
+            $0.report(event: event)
         }
     }
 }

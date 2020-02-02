@@ -26,6 +26,8 @@
 		8E95147823C11A040012D76D /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95147623C11A040012D76D /* ItemListViewController.swift */; };
 		8E95147B23C148E00012D76D /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95147A23C148E00012D76D /* UIColor+Ext.swift */; };
 		8E95147D23C153400012D76D /* UITableView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E95147C23C153400012D76D /* UITableView+Ext.swift */; };
+		8EFD46B423E75C6B00E2E9C1 /* CategoryAnalyticsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD46B323E75C6B00E2E9C1 /* CategoryAnalyticsEvents.swift */; };
+		8EFD46B723E75CBE00E2E9C1 /* ItemAnalyticsEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFD46B623E75CBE00E2E9C1 /* ItemAnalyticsEvents.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		8E95147623C11A040012D76D /* ItemListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
 		8E95147A23C148E00012D76D /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		8E95147C23C153400012D76D /* UITableView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Ext.swift"; sourceTree = "<group>"; };
+		8EFD46B323E75C6B00E2E9C1 /* CategoryAnalyticsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryAnalyticsEvents.swift; sourceTree = "<group>"; };
+		8EFD46B623E75CBE00E2E9C1 /* ItemAnalyticsEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemAnalyticsEvents.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +141,7 @@
 				8E95145A23C117B70012D76D /* AppDelegate.swift */,
 				8E95145C23C117B70012D76D /* SceneDelegate.swift */,
 				8E1B069B23E2CFB50098100F /* Analytics */,
-				8E95147123C119720012D76D /* Controllers */,
+				8E95147123C119720012D76D /* Areas */,
 				8E95147323C1197F0012D76D /* Resources */,
 				8E95147923C148CB0012D76D /* Utilities */,
 				8E95146323C117B70012D76D /* TodoApp.xcdatamodeld */,
@@ -147,13 +151,13 @@
 			path = TodoApp;
 			sourceTree = "<group>";
 		};
-		8E95147123C119720012D76D /* Controllers */ = {
+		8E95147123C119720012D76D /* Areas */ = {
 			isa = PBXGroup;
 			children = (
-				8E95147523C11A040012D76D /* CategoryViewController.swift */,
-				8E95147623C11A040012D76D /* ItemListViewController.swift */,
+				8EFD46B223E75C5000E2E9C1 /* Categories */,
+				8EFD46B523E75C9200E2E9C1 /* Items */,
 			);
-			path = Controllers;
+			path = Areas;
 			sourceTree = "<group>";
 		};
 		8E95147323C1197F0012D76D /* Resources */ = {
@@ -173,6 +177,24 @@
 				8E95147C23C153400012D76D /* UITableView+Ext.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8EFD46B223E75C5000E2E9C1 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				8EFD46B323E75C6B00E2E9C1 /* CategoryAnalyticsEvents.swift */,
+				8E95147523C11A040012D76D /* CategoryViewController.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		8EFD46B523E75C9200E2E9C1 /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				8EFD46B623E75CBE00E2E9C1 /* ItemAnalyticsEvents.swift */,
+				8E95147623C11A040012D76D /* ItemListViewController.swift */,
+			);
+			path = Items;
 			sourceTree = "<group>";
 		};
 		C54E2D008EB02E4FDCAF55D3 /* Frameworks */ = {
@@ -299,6 +321,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFD46B723E75CBE00E2E9C1 /* ItemAnalyticsEvents.swift in Sources */,
+				8EFD46B423E75C6B00E2E9C1 /* CategoryAnalyticsEvents.swift in Sources */,
 				8E95147723C11A040012D76D /* CategoryViewController.swift in Sources */,
 				8E1B069D23E2CFD70098100F /* AnalyticsEvent.swift in Sources */,
 				8E95145B23C117B70012D76D /* AppDelegate.swift in Sources */,

@@ -81,8 +81,9 @@ extension CategoryViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ItemListViewController()
-        vc.selectedCategory = categories[indexPath.row]
+        let selectedCategory = categories[indexPath.row]
+        let vc = ItemListViewController(selectedCategory: selectedCategory, analyticsReporter: .shared)
+        
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -136,7 +137,7 @@ extension CategoryViewController {
             self.saveCategories()
             self.tableView.reloadData()
             
-            self.analyticsReporter.report(event: .categoryAdded, params: [.categoryName: categoryTitle])
+            self.analyticsReporter.report(event: .categoryAdded(categoryTitle: categoryTitle))
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

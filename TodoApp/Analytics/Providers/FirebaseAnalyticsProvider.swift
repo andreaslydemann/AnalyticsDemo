@@ -13,9 +13,9 @@ struct FirebaseAnalyticsProvider: AnalyticsProvider {
         FirebaseApp.configure()
     }
 
-    func report(event: AnalyticsEvent, parameters: AnalyticsParameters) {
-        let name = eventMapper.event(for: event)
-        let params = eventMapper.parameters(for: parameters)
-        Analytics.logEvent(name, parameters: params)
+    func report(event: AnalyticsEvent) {
+        let snakeCaseEventName = eventMapper.eventName(for: event.name)
+        let snakeCaseParameters = eventMapper.parameters(for: event.parameters)
+        Analytics.logEvent(snakeCaseEventName, parameters: snakeCaseParameters)
     }
 }

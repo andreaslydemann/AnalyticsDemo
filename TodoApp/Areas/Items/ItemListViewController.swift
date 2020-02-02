@@ -4,6 +4,13 @@ import CoreData
 final class ItemListViewController: UITableViewController, UISearchResultsUpdating {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    private var analyticsReporter: AnalyticsReporter!
+    
+    convenience init(selectedCategory: Category, analyticsReporter: AnalyticsReporter) {
+        self.init()
+        self.selectedCategory = selectedCategory
+        self.analyticsReporter = analyticsReporter
+    }
     
     var items = [Item]()
     var searchResults = [Item]()
@@ -104,6 +111,8 @@ extension ItemListViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
+        
+        analyticsReporter.report(event: .itemToggled)
     }
 }
 

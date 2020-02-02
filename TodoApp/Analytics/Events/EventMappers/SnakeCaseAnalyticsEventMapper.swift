@@ -1,12 +1,12 @@
 import Foundation
 
 struct SnakeCaseAnalyticsEventMapper: AnalyticsEventMapper {
-    func event(for event: AnalyticsEvent) -> String {
-        return String(describing: event).camelCaseToSnakeCase()
+    func eventName(for eventName: String) -> String {
+        return String(describing: eventName).camelCaseToSnakeCase()
     }
     
-    func parameters(for parameters: AnalyticsParameters) -> [String: String] {
-        return Dictionary(uniqueKeysWithValues: parameters.map { ($0.key.rawValue.camelCaseToSnakeCase(), $0.value) })
+    func parameters(for parameters: AnalyticsParameters) -> AnalyticsParameters {
+        return Dictionary(uniqueKeysWithValues: parameters.map { ($0.key.camelCaseToSnakeCase(), $0.value) })
     }
 }
 
