@@ -12,6 +12,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window.windowScene = windowScene
 
+        AnalyticsReporter.register(provider: LoggingAnalyticsProvider())
+        
         let categoryVC = CategoryViewController(analyticsReporter: .shared)
         
         window.rootViewController = UINavigationController(rootViewController: categoryVC)
