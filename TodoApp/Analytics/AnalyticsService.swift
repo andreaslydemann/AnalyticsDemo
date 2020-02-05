@@ -1,6 +1,6 @@
 import Foundation
 
-class AnalyticsService {
+public final class AnalyticsService {
     private static var providers = [AnalyticsProvider]()
     
     static let shared = AnalyticsService(providers: providers)

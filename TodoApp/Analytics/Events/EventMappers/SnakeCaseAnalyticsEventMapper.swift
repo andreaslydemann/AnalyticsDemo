@@ -1,11 +1,11 @@
 import Foundation
 
-struct SnakeCaseAnalyticsEventMapper: AnalyticsEventMapper {
-    func name(for eventName: String) -> String {
+public struct SnakeCaseAnalyticsEventMapper: AnalyticsEventMapper {
+    public func name(for eventName: String) -> String {
         return String(describing: eventName).camelCaseToSnakeCase()
     }
     
-    func parameters(for parameters: [String: String]) -> [String: String] {
+    public func parameters(for parameters: [String: String]) -> [String: String] {
         return Dictionary(uniqueKeysWithValues: parameters.map { ($0.key.camelCaseToSnakeCase(), $0.value) })
     }
 }

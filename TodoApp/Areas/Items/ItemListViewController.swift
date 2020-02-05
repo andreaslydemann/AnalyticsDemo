@@ -5,13 +5,13 @@ final class ItemListViewController: UITableViewController, UISearchResultsUpdati
     private var items = [Item]()
     private var searchResults = [Item]()
     private var coreDataConnection: CoreDataConnection!
-    private var analyticsReporter: AnalyticsService!
+    private var analyticsService: AnalyticsService!
 
-    convenience init(selectedCategory: Category, coreDataConnection: CoreDataConnection, analyticsReporter: AnalyticsService) {
+    convenience init(selectedCategory: Category, coreDataConnection: CoreDataConnection, analyticsService: AnalyticsService) {
         self.init()
         self.selectedCategory = selectedCategory
         self.coreDataConnection = coreDataConnection
-        self.analyticsReporter = analyticsReporter
+        self.analyticsService = analyticsService
     }
     
     var selectedCategory : Category? {
@@ -113,7 +113,7 @@ extension ItemListViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         tableView.reloadData()
         
-        analyticsReporter.report(event: .itemToggled)
+        analyticsService.report(event: .itemToggled)
     }
 }
 

@@ -1,6 +1,6 @@
 import Foundation
 
-struct AnalyticsEvent {
+public struct AnalyticsEvent {
     var name: String
     var parameters: [String: String]
     

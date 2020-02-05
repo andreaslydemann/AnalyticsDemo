@@ -4,12 +4,12 @@ final class CategoryViewController: UITableViewController {
     
     private var categories = [Category]()
     private var coreDataConnection: CoreDataConnection!
-    private var analyticsReporter: AnalyticsService!
+    private var analyticsService: AnalyticsService!
     
-    convenience init(coreDataConnection: CoreDataConnection, analyticsReporter: AnalyticsService) {
+    convenience init(coreDataConnection: CoreDataConnection, analyticsService: AnalyticsService) {
         self.init()
         self.coreDataConnection = coreDataConnection
-        self.analyticsReporter = analyticsReporter
+        self.analyticsService = analyticsService
     }
     
     override func viewDidLoad() {
@@ -81,7 +81,7 @@ extension CategoryViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ItemListViewController(selectedCategory: categories[indexPath.row], coreDataConnection: .shared, analyticsReporter: .shared)
+        let vc = ItemListViewController(selectedCategory: categories[indexPath.row], coreDataConnection: .shared, analyticsService: .shared)
         navigationController?.pushViewController(vc, animated: true)
     }
 }
@@ -128,7 +128,7 @@ extension CategoryViewController {
             self.saveCategories()
             self.tableView.reloadData()
             
-            self.analyticsReporter.report(event: .categoryAdded(categoryTitle: categoryTitle))
+            self.analyticsService.report(event: .categoryAdded(categoryTitle: categoryTitle))
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)

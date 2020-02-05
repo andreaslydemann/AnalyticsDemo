@@ -12,9 +12,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window.windowScene = windowScene
 
-        AnalyticsService.register(provider: FirebaseAnalyticsProvider())
+        let snakeCaseEventMapper = SnakeCaseAnalyticsEventMapper()
+        AnalyticsService.register(provider: FirebaseAnalyticsProvider(eventMapper: snakeCaseEventMapper))
         
-        let categoryVC = CategoryViewController(coreDataConnection: .shared, analyticsReporter: .shared)
+        let categoryVC = CategoryViewController(coreDataConnection: .shared, analyticsService: .shared)
         
         window.rootViewController = UINavigationController(rootViewController: categoryVC)
         window.makeKeyAndVisible()
