@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		55B79464FAD444050CC9633D /* Pods_TodoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46807040E694F888F91B4F7E /* Pods_TodoApp.framework */; };
 		8E146D5823EB421C006808CF /* DebugAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E146D5723EB421C006808CF /* DebugAnalyticsProvider.swift */; };
+		8E146D5A23EB43B9006808CF /* CoreDataConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E146D5923EB43B9006808CF /* CoreDataConnection.swift */; };
 		8E1B069D23E2CFD70098100F /* AnalyticsEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B069C23E2CFD70098100F /* AnalyticsEvent.swift */; };
 		8E1B069F23E2D0000098100F /* AnalyticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B069E23E2D0000098100F /* AnalyticsService.swift */; };
 		8E1B06AA23E4053F0098100F /* FirebaseAnalyticsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E1B06A923E4053F0098100F /* FirebaseAnalyticsProvider.swift */; };
@@ -35,6 +36,7 @@
 		7DB109B0C328D04714AFF9B0 /* Pods-TodoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoApp.debug.xcconfig"; path = "Target Support Files/Pods-TodoApp/Pods-TodoApp.debug.xcconfig"; sourceTree = "<group>"; };
 		8D6A4DF425F0B4ED6793F027 /* Pods-TodoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodoApp.release.xcconfig"; path = "Target Support Files/Pods-TodoApp/Pods-TodoApp.release.xcconfig"; sourceTree = "<group>"; };
 		8E146D5723EB421C006808CF /* DebugAnalyticsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugAnalyticsProvider.swift; sourceTree = "<group>"; };
+		8E146D5923EB43B9006808CF /* CoreDataConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataConnection.swift; sourceTree = "<group>"; };
 		8E1B069C23E2CFD70098100F /* AnalyticsEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsEvent.swift; sourceTree = "<group>"; };
 		8E1B069E23E2D0000098100F /* AnalyticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsService.swift; sourceTree = "<group>"; };
 		8E1B06A923E4053F0098100F /* FirebaseAnalyticsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsProvider.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			children = (
 				8E95147A23C148E00012D76D /* UIColor+Ext.swift */,
 				8E95147C23C153400012D76D /* UITableView+Ext.swift */,
+				8E146D5923EB43B9006808CF /* CoreDataConnection.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E146D5A23EB43B9006808CF /* CoreDataConnection.swift in Sources */,
 				8EFD46B723E75CBE00E2E9C1 /* ItemAnalyticsEvents.swift in Sources */,
 				8E146D5823EB421C006808CF /* DebugAnalyticsProvider.swift in Sources */,
 				8EFD46B423E75C6B00E2E9C1 /* CategoryAnalyticsEvents.swift in Sources */,
