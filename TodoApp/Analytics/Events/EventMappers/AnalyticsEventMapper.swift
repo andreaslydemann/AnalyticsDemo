@@ -1,6 +1,6 @@
 import Foundation
 
 protocol AnalyticsEventMapper {
-    func eventName(for event: String) -> String
-    func parameters(for parameters: AnalyticsParameters) -> AnalyticsParameters
+    func name(for event: String) -> String
+    func parameters(for parameters: [String: String]) -> [String: String]
 }

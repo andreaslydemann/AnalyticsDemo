@@ -1,12 +1,12 @@
 import Foundation
 
-class AnalyticsReporter {
+class AnalyticsService {
     private static var providers = [AnalyticsProvider]()
     
-    static let shared = AnalyticsReporter(providers: providers)
+    static let shared = AnalyticsService(providers: providers)
     
     private init(providers: [AnalyticsProvider]) {
-        AnalyticsReporter.providers = providers
+        AnalyticsService.providers = providers
     }
     
     static func register(provider: AnalyticsProvider) {
@@ -14,8 +14,8 @@ class AnalyticsReporter {
     }
 
     func report(event: AnalyticsEvent) {
-        AnalyticsReporter.providers.forEach {
-            $0.report(event: event)
+        AnalyticsService.providers.forEach {
+            $0.reportEvent(name: event.name, parameters: event.parameters)
         }
     }
 }

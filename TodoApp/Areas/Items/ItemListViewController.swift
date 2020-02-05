@@ -4,9 +4,9 @@ import CoreData
 final class ItemListViewController: UITableViewController, UISearchResultsUpdating {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    private var analyticsReporter: AnalyticsReporter!
+    private var analyticsReporter: AnalyticsService!
     
-    convenience init(selectedCategory: Category, analyticsReporter: AnalyticsReporter) {
+    convenience init(selectedCategory: Category, analyticsReporter: AnalyticsService) {
         self.init()
         self.selectedCategory = selectedCategory
         self.analyticsReporter = analyticsReporter

@@ -12,7 +12,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         window.windowScene = windowScene
 
-        AnalyticsReporter.register(provider: LoggingAnalyticsProvider())
+        AnalyticsService.register(provider: FirebaseAnalyticsProvider())
         
         let categoryVC = CategoryViewController(analyticsReporter: .shared)
         

@@ -4,9 +4,9 @@ import CoreData
 final class CategoryViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    private var analyticsReporter: AnalyticsReporter!
+    private var analyticsReporter: AnalyticsService!
     
-    convenience init(analyticsReporter: AnalyticsReporter) {
+    convenience init(analyticsReporter: AnalyticsService) {
         self.init()
         self.analyticsReporter = analyticsReporter
     }

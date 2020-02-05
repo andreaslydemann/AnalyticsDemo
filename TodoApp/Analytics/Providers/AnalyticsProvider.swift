@@ -1,5 +1,5 @@
 import Foundation
 
 protocol AnalyticsProvider {
-    func report(event: AnalyticsEvent)
+    func reportEvent(name: String, parameters: [String: String])
 }
