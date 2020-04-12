@@ -4,6 +4,7 @@ final class ItemListViewController: UITableViewController, UISearchResultsUpdati
     
     private var items = [Item]()
     private var searchResults = [Item]()
+    private var selectedCategory : Category!
     private var coreDataConnection: CoreDataConnection!
     private var analyticsService: AnalyticsService!
 
@@ -12,12 +13,8 @@ final class ItemListViewController: UITableViewController, UISearchResultsUpdati
         self.selectedCategory = selectedCategory
         self.coreDataConnection = coreDataConnection
         self.analyticsService = analyticsService
-    }
-    
-    var selectedCategory : Category? {
-        didSet {
-            loadItems()
-        }
+        
+        loadItems()
     }
     
     lazy var searchController: UISearchController = {
